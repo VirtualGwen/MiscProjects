@@ -5,15 +5,28 @@
 from random import choice
 from random import randint
 
-lottery = []
-winner = []
+class Lottery:
 
-for i in range(10):
-	lottery.append(randint(1,10))
+	def __init__(self):
 
-for i in range(4):
-	winner.append(choice(lottery))
+		self.numbers = []
+		self.winner = []
+		
+		self.generate_numbers()
+		self.generate_winner()
+	
+	def generate_numbers(self):
+
+
+		for i in range(10):
+			self.numbers.append(randint(1,10))
+
+	def generate_winner(self):
+		for i in range(4):
+			self.winner.append(choice(self.numbers))
+
+lotto = Lottery()
 
 print("You are a winner if your ticket matches these numbers:", end = " ")
-print(*winner, sep = " | ")
+print(*lotto.winner, sep = " | ")
 
