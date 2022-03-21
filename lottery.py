@@ -16,12 +16,12 @@ class Lottery:
 		self.generate_winner()
 	
 	def generate_numbers(self):
-
-
+		self.numbers = []
 		for i in range(10):
 			self.numbers.append(randint(1,10))
 
 	def generate_winner(self):
+		self.winner = []
 		for i in range(4):
 			self.winner.append(choice(self.numbers))
 
