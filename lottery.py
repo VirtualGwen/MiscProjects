@@ -16,12 +16,20 @@ class Lottery:
 		self.generate_winner()
 	
 	def generate_numbers(self):
+<<<<<<< HEAD
 
 
+=======
+		self.numbers = []
+>>>>>>> 86bd9f2d44122e7494b41469fb4674ab76be9d03
 		for i in range(10):
 			self.numbers.append(randint(1,10))
 
 	def generate_winner(self):
+<<<<<<< HEAD
+=======
+		self.winner = []
+>>>>>>> 86bd9f2d44122e7494b41469fb4674ab76be9d03
 		for i in range(4):
 			self.winner.append(choice(self.numbers))
 
@@ -29,3 +37,7 @@ lotto = Lottery()
 
 print("You are a winner if your ticket matches these numbers:", end = " ")
 print(*lotto.winner, sep = " | ")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 86bd9f2d44122e7494b41469fb4674ab76be9d03

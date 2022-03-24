@@ -4,6 +4,7 @@
 #Eventually it will return how many tries it took to find the winning ticket. Could take a while.
 
 from random import randint
+<<<<<<< HEAD
 import collections
 
 
@@ -35,3 +36,36 @@ def compare(my_ticket, test_ticket, ticket_found):
 			
 make_ticket(test_ticket)
 print(f"It took {compare(my_ticket, test_ticket, ticket_found)} times to find your winning ticket. Better off playing the stock market.")
+=======
+import lottery
+
+lotto = lottery.Lottery()
+
+
+my_ticket = []
+test_ticket = lotto.winner
+
+
+for i in range(4):
+	my_ticket.append(randint(1,10))
+
+def compare(my_ticket, test_ticket):
+
+	my_ticket.sort()
+	test_ticket.sort()
+
+	ticket_found = 0
+	num_tries = 0
+
+	while(ticket_found == 0):
+		if my_ticket == test_ticket:
+			ticket_found = 1
+			return num_tries
+		else:
+			lotto.generate_winner()
+			test_ticket = lotto.winner
+			num_tries += 1
+			test_ticket.sort()
+
+print(f"It took {compare(my_ticket, test_ticket)} times to find your winning ticket. Better off playing the stock market.")
+>>>>>>> 86bd9f2d44122e7494b41469fb4674ab76be9d03
